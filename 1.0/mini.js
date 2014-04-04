@@ -91,12 +91,14 @@ KISSY.add(function(S, Node, Mask) {
             opts    = self.opts,
             buttons = opts.buttons;
 
-        self.el.delegate('click', '.J_DialogBtn', function(e) {
-            var index = $(this).attr('data-index'),
-                event = buttons[index].event;
+        if (buttons.length) {
+            self.el.delegate('click', '.J_DialogBtn', function(e) {
+                var index = $(this).attr('data-index'),
+                    event = buttons[index].event;
 
-            event && event.call(self, e);
-        });
+                event && event.call(self, e);
+            });
+        }
     };
 
     /**
