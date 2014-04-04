@@ -119,34 +119,19 @@ KISSY.add('gallery/dialog/1.0/mini',function(S, Node, Mask) {
      * Dialog
      */
     function Dialog(opts) {
-        this.opts   = S.mix({}, def, opts);
-        this.isInit = false;
+        this.opts = S.mix({}, def, opts);
+        this.init();
     }
 
     /**
      * 初始化
      */
     Dialog.prototype.init = function() {
-        var self = this,
-            opts = self.opts,
-            html;
 
-        // 创建按钮
-        self.createButtons();
-
-        // 添加弹框
-        html    = template(tpl.box, opts);
-        self.el = $(html).appendTo($body);
-
-        // 绑定按钮事件
-        self.bindButtonsEvent();
-
-        // 更改标识
-        self.isInit = true;
     };
 
     /**
-     * 创建按钮
+     * 创建按钮内容
      */
     Dialog.prototype.createButtons = function() {
         var self    = this,
@@ -181,13 +166,35 @@ KISSY.add('gallery/dialog/1.0/mini',function(S, Node, Mask) {
     };
 
     /**
+     * 渲染弹框
+     */
+    Dialog.prototype.render = function() {
+        var self = this,
+            opts = self.opts,
+            html;
+
+        // 创建按钮内容
+        self.createButtons();
+
+        // 生成弹框元素
+        html    = template(tpl.box, opts);
+        self.el = $(html).appendTo($body);
+
+        // 绑定按钮事件
+        self.bindButtonsEvent();
+
+        // 更改渲染标识
+        self.isRendered = true;
+    };
+
+    /**
      * 显示弹框
      */
     Dialog.prototype.show = function() {
         var self = this;
 
-        if (!self.isInit) {
-            self.init();
+        if (!self.isRendered) {
+            self.render();
         }
 
         if (self.el) {
