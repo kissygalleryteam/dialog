@@ -138,8 +138,8 @@ KISSY.add('gallery/dialog/1.0/mini',function(S, Node, Mask) {
         html    = template(tpl.box, opts);
         self.el = $(html).appendTo($body);
 
-        // 绑定事件
-        self.bind();
+        // 绑定按钮事件
+        self.bindButtonsEvent();
 
         // 更改标识
         self.isInit = true;
@@ -165,9 +165,9 @@ KISSY.add('gallery/dialog/1.0/mini',function(S, Node, Mask) {
     };
 
     /**
-     * 绑定事件
+     * 绑定按钮事件
      */
-    Dialog.prototype.bind = function() {
+    Dialog.prototype.bindButtonsEvent = function() {
         var self    = this,
             opts    = self.opts,
             buttons = opts.buttons;
