@@ -1,0 +1,17 @@
+{
+    "name": "dialog",
+    "comName":"Dialog",
+    "version": "1.0",
+    "desc": "",
+    "tag":"1.0,kissy-mini",
+    "githubName":"gaoli",
+    "author": {
+        "name": "莫争",
+        "email": "gaoli.gl@taobao.com",
+        "page": ""
+    },
+	"flexComboPort":"81",
+	"reserveServerPort":"8080",
+    "type": "kissy-gallery",
+    "type-url": "http://gallery.kissyui.com/guide"
+}
