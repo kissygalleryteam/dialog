@@ -61,6 +61,7 @@ KISSY.add(function(S, Node, Mask) {
     Dialog.prototype.init = function() {
         var self = this;
 
+        self.isRendered = false;
         self.bindTriggerEvent();
     };
 

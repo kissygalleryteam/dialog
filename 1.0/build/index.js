@@ -129,6 +129,7 @@ KISSY.add('gallery/dialog/1.0/mini',function(S, Node, Mask) {
     Dialog.prototype.init = function() {
         var self = this;
 
+        self.isRendered = false;
         self.bindTriggerEvent();
     };
 
