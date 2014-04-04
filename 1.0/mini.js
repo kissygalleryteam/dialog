@@ -53,8 +53,6 @@ KISSY.add(function(S, Node, Mask) {
     function Dialog(opts) {
         this.opts   = S.mix({}, def, opts);
         this.isInit = false;
-
-        this.show();
     }
 
     /**
