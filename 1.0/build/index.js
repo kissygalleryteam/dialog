@@ -19,21 +19,21 @@ KISSY.add('gallery/dialog/1.0/mask',function(S, Node) {
      * Mask
      */
     function Mask() {
-        this.isInit = false;
+        this.isRendered = false;
     }
 
     /**
-     * 初始化
+     * 渲染遮罩
      */
-    Mask.prototype.init = function() {
+    Mask.prototype.render = function() {
         var self = this,
             html = '<div class="ks-dialog-mask"></div>';
 
-        // 添加遮罩
+        // 生成遮罩元素
         self.el = $(html).appendTo('body');
 
-        // 更改标识
-        self.isInit = true;
+        // 更改渲染标识
+        self.isRendered = true;
     };
 
     /**
@@ -42,8 +42,8 @@ KISSY.add('gallery/dialog/1.0/mask',function(S, Node) {
     Mask.prototype.show = function() {
         var self = this;
 
-        if (!self.isInit) {
-            self.init();
+        if (!self.isRendered) {
+            self.render();
         }
 
         if (self.el) {
