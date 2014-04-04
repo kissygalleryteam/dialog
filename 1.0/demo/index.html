@@ -42,13 +42,11 @@
 </script>
 <script>
     (function(S) {
-        var $        = S.all,
-            $alert   = $('#J_Alert'),
-            $confirm = $('#J_Confirm');
+        var $ = S.all;
 
         S.use('gallery/dialog/1.0/index', function(S, Dialog) {
 
-            var alertDialog = new Dialog({
+            new Dialog({
                 title  : '温馨提供',
                 content: '您尚未通过身份验证！',
                 buttons: [
@@ -58,11 +56,8 @@
                             this.hide();
                         }
                     }
-                ]
-            });
-
-            $alert.on('click', function() {
-                alertDialog.show();
+                ],
+                trigger: '#J_Alert'
             });
 
         });

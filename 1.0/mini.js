@@ -59,7 +59,9 @@ KISSY.add(function(S, Node, Mask) {
      * 初始化
      */
     Dialog.prototype.init = function() {
+        var self = this;
 
+        self.bindTriggerEvent();
     };
 
     /**
@@ -95,6 +97,21 @@ KISSY.add(function(S, Node, Mask) {
 
             event && event.call(self, e);
         });
+    };
+
+    /**
+     * 绑定触发事件
+     */
+    Dialog.prototype.bindTriggerEvent = function() {
+        var self     = this,
+            opts     = self.opts,
+            $trigger = $(opts.trigger);
+
+        if ($trigger.length) {
+            $trigger.on('click', function() {
+                self.show();
+            });
+        }
     };
 
     /**
