@@ -79,6 +79,8 @@ KISSY.add('gallery/dialog/1.0/mini',function(S, Node, Mask) {
     // 默认配置
     var def = {
         mask       : true,
+        width      : '300px',
+        height     : 'auto',
         title      : '',
         content    : '',
         buttons    : [],
@@ -199,6 +201,12 @@ KISSY.add('gallery/dialog/1.0/mini',function(S, Node, Mask) {
         // 生成弹框元素
         html    = template(tpl.box, opts);
         self.el = $(html).appendTo($body);
+
+        // 设置弹框宽高
+        self.el.css({
+            width : opts.width,
+            height: opts.height
+        });
 
         // 绑定按钮事件
         self.bindButtonsEvent();
