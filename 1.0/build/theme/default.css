@@ -1,6 +1,8 @@
 .ks-dialog {
     z-index: 100001;
     position: fixed;
+    top: 50%;
+    left: 50%;
     -webkit-border-radius: 7px;
     background: #F7F7F7;
 }

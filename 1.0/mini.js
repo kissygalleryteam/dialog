@@ -11,7 +11,7 @@ KISSY.add(function(S, Node, Mask) {
     // 默认配置
     var def = {
         mask       : true,
-        width      : '300px',
+        width      : 300,
         height     : 'auto',
         title      : '',
         content    : '',
@@ -140,11 +140,29 @@ KISSY.add(function(S, Node, Mask) {
             height: opts.height
         });
 
+        // 设置弹框居中
+        self.center();
+
         // 绑定按钮事件
         self.bindButtonsEvent();
 
         // 更改渲染标识
         self.isRendered = true;
+    };
+
+    /**
+     * 居中弹框
+     */
+    Dialog.prototype.center = function() {
+        var self   = this,
+            opts   = self.opts,
+            width  = opts.width,
+            height = opts.height === 'auto' ? self.el.height() : opts.height;
+
+        self.el.css({
+            marginTop : '-' + height / 2 + 'px',
+            marginLeft: '-' + width  / 2 + 'px'
+        });
     };
 
     /**
