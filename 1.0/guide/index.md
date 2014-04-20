@@ -16,13 +16,25 @@ Dialog是。
 
 ### 参数
 
+*mask* (Boolean)
+
+弹框遮罩，默认为 `true`
+
+*width* (Number)
+
+弹框宽度，默认为 `300`
+
+*height* (Number)
+
+弹框高度，默认为 `auto`
+
 *title* (String)
 
-弹框标题，默认为空
+弹框标题，默认为 `''`
 
 *content* (String)
 
-弹框内容，默认为空
+弹框内容，默认为 `''`
 
 *buttons* (Array)
 
@@ -31,4 +43,10 @@ Dialog是。
 *trigger* (String)
 
 弹框触发元素，可传递选择器
+
+*classPrefix* (String)
+
+弹框样式前缀，默认为 `ks-dialog`
+
+### 方法
 
