@@ -11,7 +11,24 @@ Dialog是。
     S.use('gallery/dialog/1.0/index', function (S, Dialog) {
          var dialog = new Dialog();
     })
-	
-	
 
-## API说明
+## API
+
+### 参数
+
+*title* (String)
+
+弹框标题，默认为空
+
+*content* (String)
+
+弹框内容，默认为空
+
+*buttons* (Array)
+
+弹框按钮
+
+*trigger* (String)
+
+弹框触发元素，可传递选择器
+
